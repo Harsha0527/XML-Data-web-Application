@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+//   /* Global Styles for Light Mode */
+//   :root {
+//     --background-color: #ffffff;
+//     --navbar-bg: #f8f9fa;
+//     --text-color: #000000;
+//     --pagination-bg: #e9ecef;
+//   }
+  
+//   /* Global Styles for Night Mode */
+//   body.dark-mode {
+//     --background-color: #181818;
+//     --navbar-bg: #343a40;
+//     --text-color: #f8f9fa;
+//     --pagination-bg: #444a4d;
+//   }
+  
+//   body {
+//     background-color: var(--background-color);
+//     color: var(--text-color);
+//   }
+//   table{
+//     width: 100%;
+//     border-collapse: collapse;
+//     background-color: var(--background-color);
+//     color: var(--text-color);
+//   }
+//   .navbar {
+//     background-color: var(--navbar-bg);
+//   }
+  
+//   .pagination .page-link {
+//     background-color: var(--pagination-bg);
+//     color: var(--text-color);
+//   }
+  

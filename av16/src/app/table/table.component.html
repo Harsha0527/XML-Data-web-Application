@@ -1,0 +1,549 @@
+
+<!-- <table style="position: absolute;z-index: 9;" class="table table-striped table-hover table-bordered bg-light text-dark">
+    <thead class="thead-dark sticky-top">
+      <tr style="z-index: 1;">
+        <th class="max-width" data-toggle="tooltip" title="Award ID">Award ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Agency ID">Agency ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Transaction Type">Transaction Type</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Instrument Title">Award Instrument Title</th>
+        <th class="max-width" data-toggle="tooltip" title="CFDA Number">CFDA Number</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Code">Organization Code</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Phone">PO Phone</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Email">PO Email</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Sign Block Name">PO Sign Block Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Effective Date">Award Effective Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Expiration Date">Award Expiration Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Total Award Amount">Total Award Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Amount">Award Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Min Amendment Date">Award Min Amendment Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Max Amendment Date">Award Max Amendment Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Abstract">Award Abstract</th>
+        <th class="max-width" data-toggle="tooltip" title="Award ARRA Amount">Award ARRA Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Directorate Abbreviation">Directorate Abbreviation</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Directorate">Organization Directorate</th>
+        <th class="max-width" data-toggle="tooltip" title="Division Abbreviation">Division Abbreviation</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Division">Organization Division</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Agency Code">Award Agency Code</th>
+        <th class="max-width" data-toggle="tooltip" title="Fund Agency Code">Fund Agency Code</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Name">Institution Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Address">Institution Address</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Address 2">Institution Address 2</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution City">Institution City</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution State">Institution State</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Zip">Institution Zip</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Country">Institution Country</th>
+        <th class="max-width" data-toggle="tooltip" title="Congressional District">Congressional District</th>
+        <th class="max-width" data-toggle="tooltip" title="State Congressional District">State Congressional District</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Legal Business Name">Organization Legal Business Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Parent UEI">Organization Parent UEI</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization UEI">Organization UEI</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Award ID">Institution Award ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Award ID">Award Award ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredData">
+        <td data-toggle="tooltip" title="Award ID: {{ item.awd_id }}">{{ item.awd_id }}</td>
+        <td data-toggle="tooltip" title="Agency ID: {{ item.agcy_id }}">{{ item.agcy_id }}</td>
+        <td data-toggle="tooltip" title="Transaction Type: {{ item.tran_type }}">{{ item.tran_type }}</td>
+        <td data-toggle="tooltip" title="Award Instrument Title: {{ item.awd_titl_txt }}">{{ item.awd_titl_txt }}</td>
+        <td data-toggle="tooltip" title="CFDA Number: {{ item.cfda_num }}">{{ item.cfda_num }}</td>
+        <td data-toggle="tooltip" title="Organization Code: {{ item.org_code }}">{{ item.org_code }}</td>
+        <td data-toggle="tooltip" title="PO Phone: {{ item.po_phone }}">{{ item.po_phone }}</td>
+        <td data-toggle="tooltip" title="PO Email: {{ item.po_email }}">{{ item.po_email }}</td>
+        <td data-toggle="tooltip" title="PO Sign Block Name: {{ item.po_sign_block_name }}">{{ item.po_sign_block_name }}</td>
+        <td data-toggle="tooltip" title="Award Effective Date: {{ item.awd_eff_date }}">{{ item.awd_eff_date }}</td>
+        <td data-toggle="tooltip" title="Award Expiration Date: {{ item.awd_exp_date }}">{{ item.awd_exp_date }}</td>
+        <td data-toggle="tooltip" title="Total Award Amount: {{ item.tot_intn_awd_amt }}">{{ item.tot_intn_awd_amt }}</td>
+        <td data-toggle="tooltip" title="Award Amount: {{ item.awd_amount }}">{{ item.awd_amount }}</td>
+        <td data-toggle="tooltip" title="Award Min Amendment Date: {{ item.awd_min_amd_letter_date }}">{{ item.awd_min_amd_letter_date }}</td>
+        <td data-toggle="tooltip" title="Award Max Amendment Date: {{ item.awd_max_amd_letter_date }}">{{ item.awd_max_amd_letter_date }}</td>
+        <td data-toggle="tooltip" title="Award Abstract: {{ item.awd_abstract_narration }}">{{ item.awd_abstract_narration }}</td>
+        <td data-toggle="tooltip" title="Award ARRA Amount: {{ item.awd_arra_amount }}">{{ item.awd_arra_amount }}</td>
+        <td data-toggle="tooltip" title="Directorate Abbreviation: {{ item.dir_abbr }}">{{ item.dir_abbr }}</td>
+        <td data-toggle="tooltip" title="Organization Directorate: {{ item.org_dir_long_name }}">{{ item.org_dir_long_name }}</td>
+        <td data-toggle="tooltip" title="Division Abbreviation: {{ item.div_abbr }}">{{ item.div_abbr }}</td>
+        <td data-toggle="tooltip" title="Organization Division: {{ item.org_div_long_name }}">{{ item.org_div_long_name }}</td>
+        <td data-toggle="tooltip" title="Award Agency Code: {{ item.awd_agcy_code }}">{{ item.awd_agcy_code }}</td>
+        <td data-toggle="tooltip" title="Fund Agency Code: {{ item.fund_agcy_code }}">{{ item.fund_agcy_code }}</td>
+        <td data-toggle="tooltip" title="Institution Name: {{ item.inst?.inst_name }}">{{ item.inst?.inst_name }}</td>
+        <td data-toggle="tooltip" title="Institution Address: {{ item.inst?.inst_street_address }}">{{ item.inst?.inst_street_address }}</td>
+        <td data-toggle="tooltip" title="Institution Address 2: {{ item.inst?.inst_street_address_2 }}">{{ item.inst?.inst_street_address_2 }}</td>
+        <td data-toggle="tooltip" title="Institution City: {{ item.inst?.inst_city_name }}">{{ item.inst?.inst_city_name }}</td>
+        <td data-toggle="tooltip" title="Institution State: {{ item.inst?.inst_state_name }}">{{ item.inst?.inst_state_name }}</td>
+        <td data-toggle="tooltip" title="Institution Zip: {{ item.inst?.inst_zip_code }}">{{ item.inst?.inst_zip_code }}</td>
+        <td data-toggle="tooltip" title="Institution Country: {{ item.inst?.inst_country_name }}">{{ item.inst?.inst_country_name }}</td>
+        <td data-toggle="tooltip" title="Congressional District: {{ item.inst?.cong_dist_code }}">{{ item.inst?.cong_dist_code }}</td>
+        <td data-toggle="tooltip" title="State Congressional District: {{ item.inst?.st_cong_dist_code }}">{{ item.inst?.st_cong_dist_code }}</td>
+        <td data-toggle="tooltip" title="Organization Legal Business Name: {{ item.inst?.org_lgl_bus_name }}">{{ item.inst?.org_lgl_bus_name }}</td>
+        <td data-toggle="tooltip" title="Organization Parent UEI: {{ item.inst?.org_prnt_uei_num }}">{{ item.inst?.org_prnt_uei_num }}</td>
+        <td data-toggle="tooltip" title="Organization UEI: {{ item.inst?.org_uei_num }}">{{ item.inst?.org_uei_num }}</td>
+        <td data-toggle="tooltip" title="Institution Award ID: {{ item.inst?.instAwdId }}">{{ item.inst?.instAwdId }}</td>
+        <td data-toggle="tooltip" title="Award Award ID: {{ item.inst?.awardAwdId }}">{{ item.inst?.awardAwdId }}</td>
+      </tr>
+    </tbody>
+  </table>
+   -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <div class="container mt-4">
+    <div class="accordion" id="dataAccordion">
+      <div class="card" *ngFor="let item of filteredData; let i = index">
+        <div class="card-header" id="heading{{i}}">
+          <h5 class="mb-0" >
+            <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="true" >
+              Award ID: {{ item.awd_id }}
+            </button>
+          </h5>
+        </div>
+        <div id="collapse{{i}}" class="collapse show" data-parent="#dataAccordion">
+          <div class="card-body">
+            <table class="table table-striped table-hover table-bordered bg-light text-dark">
+              <tbody>
+                <tr>
+                  <td><strong>Agency ID</strong></td>
+                  <td>{{ item.agcy_id }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Transaction Type</strong></td>
+                  <td>{{ item.tran_type }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Instrument Title</strong></td>
+                  <td>{{ item.awd_titl_txt }}</td>
+                </tr>
+                <tr>
+                  <td><strong>CFDA Number</strong></td>
+                  <td>{{ item.cfda_num }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization Code</strong></td>
+                  <td>{{ item.org_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>PO Phone</strong></td>
+                  <td>{{ item.po_phone }}</td>
+                </tr>
+                <tr>
+                  <td><strong>PO Email</strong></td>
+                  <td>{{ item.po_email }}</td>
+                </tr>
+                <tr>
+                  <td><strong>PO Sign Block Name</strong></td>
+                  <td>{{ item.po_sign_block_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Effective Date</strong></td>
+                  <td>{{ item.awd_eff_date }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Expiration Date</strong></td>
+                  <td>{{ item.awd_exp_date }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Total Award Amount</strong></td>
+                  <td>{{ item.tot_intn_awd_amt }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Amount</strong></td>
+                  <td>{{ item.awd_amount }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Min Amendment Date</strong></td>
+                  <td>{{ item.awd_min_amd_letter_date }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Max Amendment Date</strong></td>
+                  <td>{{ item.awd_max_amd_letter_date }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Abstract</strong></td>
+                  <td>{{ item.awd_abstract_narration }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award ARRA Amount</strong></td>
+                  <td>{{ item.awd_arra_amount }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Directorate Abbreviation</strong></td>
+                  <td>{{ item.dir_abbr }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization Directorate</strong></td>
+                  <td>{{ item.org_dir_long_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Division Abbreviation</strong></td>
+                  <td>{{ item.div_abbr }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization Division</strong></td>
+                  <td>{{ item.org_div_long_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Agency Code</strong></td>
+                  <td>{{ item.awd_agcy_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Fund Agency Code</strong></td>
+                  <td>{{ item.fund_agcy_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Name</strong></td>
+                  <td>{{ item.inst?.inst_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Address</strong></td>
+                  <td>{{ item.inst?.inst_street_address }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Address 2</strong></td>
+                  <td>{{ item.inst?.inst_street_address_2 }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution City</strong></td>
+                  <td>{{ item.inst?.inst_city_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution State</strong></td>
+                  <td>{{ item.inst?.inst_state_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Zip</strong></td>
+                  <td>{{ item.inst?.inst_zip_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Country</strong></td>
+                  <td>{{ item.inst?.inst_country_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Congressional District</strong></td>
+                  <td>{{ item.inst?.cong_dist_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>State Congressional District</strong></td>
+                  <td>{{ item.inst?.st_cong_dist_code }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization Legal Business Name</strong></td>
+                  <td>{{ item.inst?.org_lgl_bus_name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization Parent UEI</strong></td>
+                  <td>{{ item.inst?.org_prnt_uei_num }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization UEI</strong></td>
+                  <td>{{ item.inst?.org_uei_num }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Institution Award ID</strong></td>
+                  <td>{{ item.inst?.instAwdId }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Award Award ID</strong></td>
+                  <td>{{ item.inst?.awardAwdId }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main Table -->
+<div class="table-responsive" style="max-height: 70vh; position: relative;">
+  <table class="table table-striped table-hover table-bordered bg-light text-dark">
+    <thead class="thead-dark sticky-top" style="top: 0; z-index: 10;">
+      <tr style="z-index: 1;">
+        <th class="max-width" data-toggle="tooltip" title="Award ID">Award ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Agency ID">Agency ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Transaction Type">Transaction Type</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Instrument Title">Award Instrument Title</th>
+        <th class="max-width" data-toggle="tooltip" title="CFDA Number">CFDA Number</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Code">Organization Code</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Phone">PO Phone</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Email">PO Email</th>
+        <th class="max-width" data-toggle="tooltip" title="PO Sign Block Name">PO Sign Block Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Effective Date">Award Effective Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Expiration Date">Award Expiration Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Total Award Amount">Total Award Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Amount">Award Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Min Amendment Date">Award Min Amendment Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Max Amendment Date">Award Max Amendment Date</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Abstract">Award Abstract</th>
+        <th class="max-width" data-toggle="tooltip" title="Award ARRA Amount">Award ARRA Amount</th>
+        <th class="max-width" data-toggle="tooltip" title="Directorate Abbreviation">Directorate Abbreviation</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Directorate">Organization Directorate</th>
+        <th class="max-width" data-toggle="tooltip" title="Division Abbreviation">Division Abbreviation</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Division">Organization Division</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Agency Code">Award Agency Code</th>
+        <th class="max-width" data-toggle="tooltip" title="Fund Agency Code">Fund Agency Code</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Name">Institution Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Address">Institution Address</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Address 2">Institution Address 2</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution City">Institution City</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution State">Institution State</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Zip">Institution Zip</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Country">Institution Country</th>
+        <th class="max-width" data-toggle="tooltip" title="Congressional District">Congressional District</th>
+        <th class="max-width" data-toggle="tooltip" title="State Congressional District">State Congressional District</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Legal Business Name">Organization Legal Business Name</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization Parent UEI">Organization Parent UEI</th>
+        <th class="max-width" data-toggle="tooltip" title="Organization UEI">Organization UEI</th>
+        <th class="max-width" data-toggle="tooltip" title="Institution Award ID">Institution Award ID</th>
+        <th class="max-width" data-toggle="tooltip" title="Award Award ID">Award Award ID</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of filteredData; let i = index">
+      <tr (click)="toggleAccordion(i)" [class.active]="item.expanded" [attr.aria-expanded]="item.expanded">
+        <td data-toggle="tooltip" title="Award ID: {{ item.awd_id }}">{{ item.awd_id }}</td>
+        <td data-toggle="tooltip" title="Agency ID: {{ item.agcy_id }}">{{ item.agcy_id }}</td>
+        <td data-toggle="tooltip" title="Transaction Type: {{ item.tran_type }}">{{ item.tran_type }}</td>
+        <td data-toggle="tooltip" title="Award Instrument Title: {{ item.awd_titl_txt }}">{{ item.awd_titl_txt }}</td>
+        <td data-toggle="tooltip" title="CFDA Number: {{ item.cfda_num }}">{{ item.cfda_num }}</td>
+        <td data-toggle="tooltip" title="Organization Code: {{ item.org_code }}">{{ item.org_code }}</td>
+        <td data-toggle="tooltip" title="PO Phone: {{ item.po_phone }}">{{ item.po_phone }}</td>
+        <td data-toggle="tooltip" title="PO Email: {{ item.po_email }}">{{ item.po_email }}</td>
+        <td data-toggle="tooltip" title="PO Sign Block Name: {{ item.po_sign_block_name }}">{{ item.po_sign_block_name }}</td>
+        <td data-toggle="tooltip" title="Award Effective Date: {{ item.awd_eff_date }}">{{ item.awd_eff_date }}</td>
+        <td data-toggle="tooltip" title="Award Expiration Date: {{ item.awd_exp_date }}">{{ item.awd_exp_date }}</td>
+        <td data-toggle="tooltip" title="Total Award Amount: {{ item.tot_intn_awd_amt }}">{{ item.tot_intn_awd_amt }}</td>
+        <td data-toggle="tooltip" title="Award Amount: {{ item.awd_amount }}">{{ item.awd_amount }}</td>
+        <td data-toggle="tooltip" title="Award Min Amendment Date: {{ item.awd_min_amd_letter_date }}">{{ item.awd_min_amd_letter_date }}</td>
+        <td data-toggle="tooltip" title="Award Max Amendment Date: {{ item.awd_max_amd_letter_date }}">{{ item.awd_max_amd_letter_date }}</td>
+        <td data-toggle="tooltip" title="Award Abstract: {{ item.awd_abstract_narration }}">{{ item.awd_abstract_narration }}</td>
+        <td data-toggle="tooltip" title="Award ARRA Amount: {{ item.awd_arra_amount }}">{{ item.awd_arra_amount }}</td>
+        <td data-toggle="tooltip" title="Directorate Abbreviation: {{ item.dir_abbr }}">{{ item.dir_abbr }}</td>
+        <td data-toggle="tooltip" title="Organization Directorate: {{ item.org_dir_long_name }}">{{ item.org_dir_long_name }}</td>
+        <td data-toggle="tooltip" title="Division Abbreviation: {{ item.div_abbr }}">{{ item.div_abbr }}</td>
+        <td data-toggle="tooltip" title="Organization Division: {{ item.org_div_long_name }}">{{ item.org_div_long_name }}</td>
+        <td data-toggle="tooltip" title="Award Agency Code: {{ item.awd_agcy_code }}">{{ item.awd_agcy_code }}</td>
+        <td data-toggle="tooltip" title="Fund Agency Code: {{ item.fund_agcy_code }}">{{ item.fund_agcy_code }}</td>
+        <td data-toggle="tooltip" title="Institution Name: {{ item.inst?.inst_name }}">{{ item.inst?.inst_name }}</td>
+        <td data-toggle="tooltip" title="Institution Address: {{ item.inst?.inst_street_address }}">{{ item.inst?.inst_street_address }}</td>
+        <td data-toggle="tooltip" title="Institution Address 2: {{ item.inst?.inst_street_address_2 }}">{{ item.inst?.inst_street_address_2 }}</td>
+        <td data-toggle="tooltip" title="Institution City: {{ item.inst?.inst_city_name }}">{{ item.inst?.inst_city_name }}</td>
+        <td data-toggle="tooltip" title="Institution State: {{ item.inst?.inst_state_name }}">{{ item.inst?.inst_state_name }}</td>
+        <td data-toggle="tooltip" title="Institution Zip: {{ item.inst?.inst_zip_code }}">{{ item.inst?.inst_zip_code }}</td>
+        <td data-toggle="tooltip" title="Institution Country: {{ item.inst?.inst_country_name }}">{{ item.inst?.inst_country_name }}</td>
+        <td data-toggle="tooltip" title="Congressional District: {{ item.inst?.cong_dist_code }}">{{ item.inst?.cong_dist_code }}</td>
+        <td data-toggle="tooltip" title="State Congressional District: {{ item.inst?.st_cong_dist_code }}">{{ item.inst?.st_cong_dist_code }}</td>
+        <td data-toggle="tooltip" title="Organization Legal Business Name: {{ item.inst?.org_lgl_bus_name }}">{{ item.inst?.org_lgl_bus_name }}</td>
+        <td data-toggle="tooltip" title="Organization Parent UEI: {{ item.inst?.org_prnt_uei_num }}">{{ item.inst?.org_prnt_uei_num }}</td>
+        <td data-toggle="tooltip" title="Organization UEI: {{ item.inst?.org_uei_num }}">{{ item.inst?.org_uei_num }}</td>
+        <td data-toggle="tooltip" title="Institution Award ID: {{ item.inst?.instAwdId }}">{{ item.inst?.instAwdId }}</td>
+        <td data-toggle="tooltip" title="Award Award ID: {{ item.inst?.awardAwdId }}">{{ item.inst?.awardAwdId }}</td>
+      </tr>
+      <!-- Accordion Details Row -->
+      <tr *ngIf="item.expanded" [attr.id]="'collapse' + i" class="accordion-collapse collapse show">
+        <td colspan="35" style="padding: 0; border-top: 0;">
+          <div class="accordion-details p-3 bg-light border-highlight">
+            <!-- PI Information -->
+            <div *ngIf="item.pis?.length" class="mb-4">
+              <h4 class="text-white bg-primary p-2">Principal Investigators</h4>
+              <div class="row">
+                <div *ngFor="let pi of item.pis" class="col-md-4 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ pi.pi_full_name }}</h4>
+                      <p class="mb-1"><strong>Role:</strong> {{ pi.pi_role }}</p>
+                      <p class="mb-1"><strong>Email:</strong> {{ pi.pi_email_addr }}</p>
+                      <p class="mb-1"><strong>NSF ID:</strong> {{ pi.nsf_id }}</p>
+                      <p class="mb-1"><strong>Start Date:</strong> {{ pi.pi_start_date }}</p>
+                      <p class="mb-1"><strong>End Date:</strong> {{ pi.pi_end_date }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Institution Details -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Institution Details</h4>
+                <div class="card">
+                  <div class="card-body">
+                    <p><strong>Name:</strong> {{ item.inst?.inst_name }}</p>
+                    <p><strong>Address:</strong>
+                      {{ item.inst?.inst_street_address }}
+                      {{ item.inst?.inst_street_address_2 }}</p>
+                    <p>{{ item.inst?.inst_city_name }},
+                      {{ item.inst?.inst_state_name }}
+                      {{ item.inst?.inst_zip_code }}</p>
+                    <p><strong>Country:</strong> {{ item.inst?.inst_country_name }}</p>
+                    <p><strong>Phone:</strong> {{ item.inst?.inst_phone_num }}</p>
+                    <p><strong>Congressional District:</strong> {{ item.inst?.cong_dist_code }}</p>
+                    <p><strong>State Congressional District:</strong> {{ item.inst?.st_cong_dist_code }}</p>
+                    <p><strong>Legal Business Name:</strong> {{ item.inst?.org_lgl_bus_name }}</p>
+                    <p><strong>Parent UEI:</strong> {{ item.inst?.org_prnt_uei_num }}</p>
+                    <p><strong>UEI:</strong> {{ item.inst?.org_uei_num }}</p>
+                    <p><strong>Institution Award ID:</strong> {{ item.inst?.instAwdId }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Performance Institution -->
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Performance Institution</h4>
+                <div class="card">
+                  <div class="card-body">
+                    <p><strong>Name:</strong> {{ item.perf_inst?.perf_inst_name }}</p>
+                    <p><strong>Address:</strong> {{ item.perf_inst?.perf_str_addr }}</p>
+                    <p>{{ item.perf_inst?.perf_city_name }},
+                      {{ item.perf_inst?.perf_st_code }}
+                      {{ item.perf_inst?.perf_zip_code }}</p>
+                    <p><strong>Country:</strong> {{ item.perf_inst?.perf_ctry_name }}</p>
+                    <p><strong>Congressional District:</strong> {{ item.perf_inst?.perf_cong_dist }}</p>
+                    <p><strong>State Congressional District:</strong> {{ item.perf_inst?.perf_st_cong_dist }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Program Elements -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Program Elements</h4>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ele of item.pgm_eles">
+                      <td>{{ ele.pgm_ele_code }}</td>
+                      <td>{{ ele.pgm_ele_name }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Program References -->
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Program References</h4>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Text</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ref of item.pgm_refs">
+                      <td>{{ ref.pgm_ref_code }}</td>
+                      <td>{{ ref.pgm_ref_txt }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Financial Information -->
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Funding Obligations</h4>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Fiscal Year</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let fy of item.oblg_fys">
+                      <td>{{ fy.fund_oblg_fiscal_yr }}</td>
+                      <td>{{ fy.fund_oblg_amt | currency }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-6">
+                <h4 class="text-white bg-primary p-2">Application Funds</h4>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let fund of item.app_funds">
+                      <td>{{ fund.app_code }}</td>
+                      <td>{{ fund.app_name }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
